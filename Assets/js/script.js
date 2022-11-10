@@ -1,9 +1,11 @@
 var startBtn = document.querySelector(".startBtn");
 var timerEl = document.querySelector(".timerEl");
+var questionTitle = document.getElementById('questionTitle');
+var questionEl = document.getElementById('choiceContainer')
 
 console.log(timerEl);
 
-var time = 20;
+var time = 30;
 
 //create A variable for all the questions & choices //hint: array & objects
 //var index = 0
@@ -32,8 +34,13 @@ var arr = [
 
 //function to display question
 
-function displayQuestion = () {
-  
+function displayQuestions () {
+  questionArea.classList = "";
+  question.textContent = arr[0].question;
+  a.textContent = arr[0].choices[0]
+  b.textContent = arr [1].choices[1]
+  c.textContent = arr[2].choices[2]
+  d.textContent = arr[3].choices[3]
 }
 //increase index value after user picked a choice
 //call the function to display question again
@@ -54,6 +61,8 @@ function startTimer() {
 function startQuiz() {
   console.log("Goodbye");
 }
+
+
 startBtn.addEventListener("click", function () {
   startTimer();
   startQuiz();
