@@ -2,6 +2,10 @@ var startBtn = document.querySelector(".startBtn");
 var timerEl = document.querySelector(".timerEl");
 var questionTitle = document.getElementById('questionTitle');
 var questionEl = document.getElementById('choiceContainer')
+var a = document.getElementById('a');
+var b = document.getElementById('b');
+var c = document.getElementById('c');
+var d = document.getElementById('d');
 
 console.log(timerEl);
 
@@ -35,7 +39,7 @@ var arr = [
 //function to display question
 
 function displayQuestions () {
-  questionArea.classList = "";
+  questionTitle.classList = "";
   question.textContent = arr[0].question;
   a.textContent = arr[0].choices[0]
   b.textContent = arr [1].choices[1]
@@ -61,6 +65,28 @@ function startTimer() {
 function startQuiz() {
   console.log("Goodbye");
 }
+
+questionTitle.addEventListener("click", function(event) {
+  if(event.target.textContent === arr[0].correct) {
+      console.log('Correct');
+  } else {
+      timeLeft-=5;
+  }
+});
+
+
+
+// function startQuiz() {
+//   console.log("Goodbye");
+// }
+
+// questionTitle.addEventListener("click", function(event) {
+//   if(event.target.textContent === arr[0].correct) {
+//       console.log('Correct');
+//   } else {
+//       timeLeft-=5;
+//   }
+// });
 
 
 startBtn.addEventListener("click", function () {
