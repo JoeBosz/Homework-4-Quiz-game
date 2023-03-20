@@ -40,11 +40,11 @@ var arr = [
 
 function displayQuestions () {
   questionTitle.classList = "";
-  question.textContent = arr[0].question;
+  // question.textContent = arr[0].question;
   a.textContent = arr[0].choices[0]
-  b.textContent = arr [1].choices[1]
-  c.textContent = arr[2].choices[2]
-  d.textContent = arr[3].choices[3]
+  b.textContent = arr [0].choices[1]
+  c.textContent = arr[0].choices[2]
+  d.textContent = arr[0].choices[3]
 }
 //increase index value after user picked a choice
 //call the function to display question again
@@ -76,20 +76,10 @@ questionTitle.addEventListener("click", function(event) {
 
 
 
-// function startQuiz() {
-//   console.log("Goodbye");
-// }
-
-// questionTitle.addEventListener("click", function(event) {
-//   if(event.target.textContent === arr[0].correct) {
-//       console.log('Correct');
-//   } else {
-//       timeLeft-=5;
-//   }
-// });
 
 
 startBtn.addEventListener("click", function () {
   startTimer();
   startQuiz();
+  displayQuestions();
 });

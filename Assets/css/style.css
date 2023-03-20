@@ -21,4 +21,14 @@ body {
     border-radius: 5px;
 }
 
+.choiceContainer {
+    width: 340px;
+    background: white;
+    position: fixed;
+    top: 55%;
+    left: 55%;
+    transform: translate(-60%, -50%);
+    border-radius: 5px;
+}
+
 
