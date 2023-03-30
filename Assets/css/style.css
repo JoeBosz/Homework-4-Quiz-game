@@ -105,3 +105,13 @@ body.wrong {
 .btn.wrong {
     --hue:var(--hue-wrong), 100%, 50%;
 }
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
