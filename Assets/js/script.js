@@ -3,7 +3,7 @@ const nextButton = document.getElementById("next-btn");
 const questionContainerElement = document.getElementById("question-container");
 const questionElement = document.getElementById("question");
 const answerButtonsElement = document.getElementById("answer-buttons");
-// var timerEl = document.querySelector(".timerEl");
+const timerEl = document.querySelector(".timerEl");
 // var questionTitle = document.getElementById('questionTitle');
 // var questionEl = document.getElementById('choiceContainer')
 // var a = document.getElementById('a');
@@ -26,9 +26,10 @@ function startQuiz() {
   currentQuestionIndex = 0;
   questionContainerElement.classList.remove('hide');
   setNextQuestion();
+  startTimer();
 }
 
-// var time = 30;
+var time = 30;
 
 function setNextQuestion() {
   resetState();
@@ -52,6 +53,7 @@ function showQuestion(question) {
 }
 
 function resetState() {
+  clearStatusClass(document.body);
   nextButton.classList.add('hide');
   while(answerButtonsElement.firstChild) {
     answerButtonsElement.removeChild(answerButtonsElement.firstChild);
@@ -173,27 +175,27 @@ const questions = [
 //increase index value after user picked a choice
 //call the function to display question again
 
-// function startTimer() {
-//   timerEl.textContent = time;
-//   var timeInterval = setInterval(function () {
-//     console.log("Hello");
-//     time--;
-//     timerEl.textContent = time;
+function startTimer() {
+  timerEl.textContent = time;
+  var timeInterval = setInterval(function () {
+    console.log("Hello");
+    time--;
+    timerEl.textContent = time;
 
-//     if(time <= 0){
-//         clearInterval(timeInterval)
-//     }
-//   }, 1000);
-// }
+    if(time <= 0){
+        clearInterval(timeInterval)
+    }
+  }, 1000);
+}
 
 
-// questionTitle.addEventListener("click", function(event) {
-//   if(event.target.textContent === arr[0].correct) {
-//       console.log('Correct');
-//   } else {
-//       timeLeft-=5;
-//   }
-// });
+question.addEventListener("click", function(event) {
+  if(event.target.textContent === arr[0].correct) {
+      console.log('Correct');
+  } else {
+      timeLeft-=5;
+  }
+});
 
 
 
